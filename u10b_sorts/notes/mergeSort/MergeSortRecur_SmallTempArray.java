@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 // Merge method uses a new temp array for each merge which is just 
 // large enough to store the elements being merged in that step.
-public class MergeSortRecurSmallTempArray
+public class MergeSortRecur_SmallTempArray
 {
    public static void sort(int[] a)
    { sort(a, 0, a.length - 1); }

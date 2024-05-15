@@ -1,6 +1,3 @@
-//© A+ Computer Science
-// www.apluscompsci.com
-
 //selection sort tester
 
 import static java.lang.System.*;

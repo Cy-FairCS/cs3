@@ -1,21 +1,16 @@
 import static java.lang.System.*;
 import java.util.Arrays;
 
-public class MergeSortCollegeBoardVerbose
+public class MergeSortRecur_LargeTempArray
 {
-   public static int[] quiz2_5 = {40, 45, 87, 3, 80, 13, 1};//, 35};
-   public static int[] ws2_7 = {13, 23, 91, 1, 37, 11, 89, 83, 71, 5, 53, 19, 67, 17, 29, 31};
-   public static int[] ws2_8 = {50, 55, 13, 96, 90, 23, 11, 43, 18}; 
-   public static int[] ws3_1c = {26, 48, 12, 92, 28, 6, 33};
-   public static int[] array = ws3_1c;
-   
-   public static void main(String[] args)
-   {
-      System.out.println("Before:  " + Arrays.toString(array) + "\n");
-      mergeSort(array);
-      System.out.println("\nAfter:  " + Arrays.toString(array));
-   }
-   
+   /***********************************************************
+    *                                                         *
+    *  This is the College Board's preferred version.         * 
+    *  A temp array as large as the original is created once  *
+    *  and passed around for use in all recursive calls.      *
+    *                                                         *
+    ***********************************************************/
+    
    /**
    * Sort an array of integers into ascending order.
    *
@@ -24,8 +19,7 @@ public class MergeSortCollegeBoardVerbose
    * Postcondition: elements contains its original items and items in elements
    * are sorted in ascending order.
    */
-   public static void mergeSort(int[] elements)
-   {
+   public static void mergeSort(int[] elements) {
       int n = elements.length;
       int[] temp = new int[n];
       mergeSortHelper(elements, 0, n - 1, temp);
@@ -46,10 +40,8 @@ public class MergeSortCollegeBoardVerbose
    * Postcondition: elements contains its original items and the items in elements
    * [from] ... <= elements[to] are sorted in ascending order.
    */
-   private static void mergeSortHelper(int[] elements,int from, int to, int[] temp)
-   {
-      if (from < to)
-      {
+   private static void mergeSortHelper(int[] elements,int from, int to, int[] temp) {
+      if (from < to) {
          int middle = (from + to) / 2;
          mergeSortHelper(elements, from, middle, temp);
          mergeSortHelper(elements, middle + 1, to, temp);
@@ -77,7 +69,26 @@ public class MergeSortCollegeBoardVerbose
    * elements[0] ... elements[from - 1] are in original order and
    * elements[to + 1] ... elements[elements.length - 1] are in original order.
    */
-   private static void merge(int[] elements, int from, int mid, int to, int[] temp) {
+   private static void merge(int[] elements, int from, int mid, int to, int[] temp)  {
+      int i = from;
+      int j = mid + 1;
+      int k = from;
+      while (i <= mid && j <= to)
+         if (elements[i] < elements[j])
+            temp[k++] = elements[i++];
+         else
+            temp[k++] = elements[j++];
+      while (i <= mid)
+         temp[k++] = elements[i++];
+      while (j <= to)
+         temp[k++] = elements[j++];
+      for (k = from; k <= to; k++)
+         elements[k] = temp[k];
+      System.out.println(Arrays.toString(elements) + "\t\tfrom: " + from + "\tto: " + to);
+   }
+   
+   // A more verbose version of above.
+   private static void merge2(int[] elements, int from, int mid, int to, int[] temp) {
       int i = from;
       int j = mid + 1;
       int k = from;
@@ -105,7 +116,8 @@ public class MergeSortCollegeBoardVerbose
       for (k = from; k <= to; k++) {
          elements[k] = temp[k];
       }
-      System.out.println(Arrays.toString(array) + "\t\tfrom: " + from + "\tto: " + to);
+      System.out.println(Arrays.toString(elements) + "\t\tfrom: " + from + "\tto: " + to);
    }
+
 }
 
