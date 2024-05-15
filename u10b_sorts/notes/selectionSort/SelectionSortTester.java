@@ -1,4 +1,4 @@
-//© A+ Computer Science
+//ï¿½ A+ Computer Science
 // www.apluscompsci.com
 
 //selection sort tester
@@ -20,13 +20,13 @@ public class SelectionSortTester
 		out.println("\n\narray1 after selection sort");
 		out.println(Arrays.toString(array1));
 		out.println("\n\n");		
-/*		
+		
 		Integer[] array2 = {39,6,11,23,18,3,20,5,57,15};
 
 		out.println("array2 before selection sort");
 		out.println(Arrays.toString(array2));
 
-		SelectionSortObjects.selectionSort(array2);
+		SelectionSort.selectionSort(array2);
 
 		out.println("\n\narray2 after selection sort");
 		out.println(Arrays.toString(array2));
@@ -37,10 +37,10 @@ public class SelectionSortTester
 		out.println("array3 before selection sort");
 		out.println(Arrays.toString(array3));
 
-		SelectionSortObjects.selectionSort(array3);
+		SelectionSort.selectionSort(array3);
 
 		out.println("\n\narray3 after selection sort");
 		out.println(Arrays.toString(array3));
-		out.println("\n\n");						*/
+		out.println("\n\n");						
 	}
 }
