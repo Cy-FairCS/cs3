@@ -7,7 +7,7 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class IteratorStop
+public class RestartIterator
 {
    public static void main(String args[])
    {
