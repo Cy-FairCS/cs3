@@ -20,9 +20,7 @@
     
     Test Quadrantal Angles:
     Quadrantal angles in degrees: 0, 90, 180, 270, 360
-    7 quadrantal angles starting at -270 degrees: -270, -180, -90, 0, 90, 180, 270
     Quadrantal angles in radians: 0, pi/2, pi, 3pi/2, 2pi
-    7 quadrantal angles starting at -3PI/2: -3pi/2, -pi, -pi/2, 0, pi/2, pi, 3pi/2
     
     
     Test Coterminal Angles:

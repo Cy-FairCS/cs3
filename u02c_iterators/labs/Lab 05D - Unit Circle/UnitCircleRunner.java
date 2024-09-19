@@ -14,9 +14,7 @@ public class UnitCircleRunner
       pause();
       out.println("\nTest Quadrantal Angles:");
       out.println("Quadrantal angles in degrees: " + UnitCircle.listQuadrantalAnglesInDegrees());
-      out.println("7 quadrantal angles starting at -270 degrees: " + UnitCircle.listQuadrantalAnglesInDegrees(-270, 7));
       out.println("Quadrantal angles in radians: " + UnitCircle.listQuadrantalAnglesInRadians());
-      out.println("7 quadrantal angles starting at -3PI/2: " + UnitCircle.listQuadrantalAnglesInRadians(-3*PI/2, 7));
       pause();
       out.println("\nTest Coterminal Angles:");
       out.println("90 is coterminal with 810? " + UnitCircle.areCoterminal(90, 810));
