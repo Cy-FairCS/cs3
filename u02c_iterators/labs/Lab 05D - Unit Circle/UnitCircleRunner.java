@@ -9,11 +9,14 @@ public class UnitCircleRunner
 {
    public static void main ( String[] args )
    {
+      out.println("The Unit Circle:");
       UnitCircle.printValues();
       pause();
       out.println("\nTest Quadrantal Angles:");
       out.println("Quadrantal angles in degrees: " + UnitCircle.listQuadrantalAnglesInDegrees());
+      out.println("7 quadrantal angles starting at -270 degrees: " + UnitCircle.listQuadrantalAnglesInDegrees(-270, 7));
       out.println("Quadrantal angles in radians: " + UnitCircle.listQuadrantalAnglesInRadians());
+      out.println("7 quadrantal angles starting at -3PI/2: " + UnitCircle.listQuadrantalAnglesInRadians(-3*PI/2, 7));
       pause();
       out.println("\nTest Coterminal Angles:");
       out.println("90 is coterminal with 810? " + UnitCircle.areCoterminal(90, 810));
@@ -42,7 +45,17 @@ public class UnitCircleRunner
       out.println("tan(495) = " + UnitCircle.tan(495));
       out.println("cos(pi/2) = " + UnitCircle.cos(PI/2));
       out.println("sin(-7pi/6) = " + UnitCircle.sin(-7*PI/6));
-      out.println("tan(9pi/4) = " + UnitCircle.cos(9*PI/4));
+      out.println("tan(9pi/4) = " + UnitCircle.tan(9*PI/4));
+      pause();
+      out.println("\nTest Trig Functions:");
+      out.println("cos(-120) = " + UnitCircle.cosInTermsOfReferenceAngle(-120));
+      out.println("sin(120) = " + UnitCircle.sinInTermsOfReferenceAngle(120));
+      out.println("tan(495) = " + UnitCircle.tanInTermsOfReferenceAngle(495));
+      out.println("cos(-pi/4) = " + UnitCircle.cosInTermsOfReferenceAngle(-PI/4));
+      out.println("cos(3pi/2) = " + UnitCircle.cosInTermsOfReferenceAngle(3*PI/2));
+      out.println("sin(-5pi/6) = " + UnitCircle.sinInTermsOfReferenceAngle(-5*PI/6));
+      out.println("tan(9pi/4) = " + UnitCircle.tanInTermsOfReferenceAngle(9*PI/4));
+      
       
    }
    

@@ -15,10 +15,22 @@ import static java.lang.Math.*;
  */
 public class UnitCircle
 {
+   // FIX ALL THREE SIGNS SO THEY HAVE -1 WHERE THAT TRIG FUNCTION IS NEGATIVE.
+   //
+   // Signs are listed in quadrant order, with their location in the array
+   // corresponding to the quadrant number:
+   public static final int[]    sineSigns = {0,  1, 1, 1, 1};
+   public static final int[]  cosineSigns = {0,  1, 1, 1, 1};
+   public static final int[] tangentSigns = {0,  1, 1, 1, 1};
+
+   // The lists:
    public static final ArrayList<Integer> anglesInDegrees = new ArrayList<>();
    public static final ArrayList<Double>  anglesInRadians = new ArrayList<>();
    public static final ArrayList<UnitCirclePoint> points = new ArrayList<>();
    
+   // This is a static intitializer block that populates the lists:
+   // It automatically runs when you load the class into memory (which happens when you
+   // run the program).
    static {
       Collections.addAll(anglesInDegrees, new Integer[] {0, 30, 45, 60, 90, 120, 135, 150, 180, 210, 225, 240, 270, 300, 315, 330});
       Collections.addAll(anglesInRadians, new Double[] {0.0, PI/6, PI/4, PI/3, PI/2, 2*PI/3, 3*PI/4, 5*PI/6, PI,
@@ -53,6 +65,29 @@ public class UnitCircle
    
    }
    
+   // Compare two angles using this formula:
+   //
+   //     |x - y|
+   //  -------------  <= epsilon
+   //  max(|x|, |y|)
+   //
+   // where epsilon is usually set to 1E-14 (i.e. 10^-14)
+   public static boolean approximatelyEqual(double angle1, double angle2) {
+      return false;
+   }
+
+   /*     QUADRANTAL ANGLES     */
+
+   // Quadrantal angles: ... -270, -180, -90, 0, 90, 180, 270, ...
+   public static boolean isQuadrantal(int angle) {
+      return false;
+   }
+   
+   // Quadrantal angles: ... -3pi/2, -pi, -pi/2, 0, pi/2, pi, 3pi/2, ...
+   public static boolean isQuadrantal(double angle) {
+      return 0 <= 1E-14;
+   }
+      
    // Return a string listing all quadrantal angles in degrees
    // in the range [0, 360]
    public static String listQuadrantalAnglesInDegrees() {
@@ -60,10 +95,12 @@ public class UnitCircle
    }
 
    // Return a string listing all quadrantal angles in degrees
-   // in the range [0, 360]
+   // in the range [0, 2pi]
    public static String listQuadrantalAnglesInRadians() {
       return "";
    }
+   
+   /*     COTERMINAL ANGLES     */
    
    // Determine whether the given angles are coterminal.
    // Assume angle measures are in degrees.
@@ -83,18 +120,20 @@ public class UnitCircle
       return 0;
    }
    
-   // Find the angle in range [0, 360) that is coterminal with 
+   // Find the angle in range [0, 2pi) that is coterminal with 
    // the given angle (in radians).
-   public static double coterminalIn0to360(double angle) {
+   public static double coterminalIn0to2PI(double angle) {
       return 0;
    }
       
+   /*     REFERENCE ANGLES     */
+
    // The reference angle is the positive angle in [0, 90]
    // that reperesents the amount of rotation from the closest
    // side of the x-axis to the terminal ray of the angle.
    // Assume angle is in degrees.
    public static int referenceAngle(int angle) {
-         return 0;
+      return 0;
    }
    
    // The reference angle is the positive angle in [0, 90]
@@ -102,9 +141,17 @@ public class UnitCircle
    // side of the x-axis to the terminal ray of the angle.
    // Assume angle is in radians.
    public static int referenceAngle(double angle) {
-         return 0;
+      return 0;
    }
+
+   /*     EXACT FORM OF TRIG VALUES     */
    
+   /* The goal is not to return the decimal approximation
+    * for the requested trig values. Java's trig functions
+    * already do that. The goal is to return the correct
+    * exact value from the Unit Circle table. So for cos(30),
+    * the function should return sqrt(3)/2, not 0.8660254037844386
+    */
    public static String cos(int angle) {
       //angle = coterminalIn0to360(angle);
       int angleLoc = anglesInDegrees.indexOf(angle);
@@ -113,8 +160,9 @@ public class UnitCircle
       return "";  //points.get(angleLoc).????;  //<--replace ???? and uncomment.
    }
   
+   // Make this function call the degree version.  
    public static String cos(double angle) {
-      return cos( (int)Math.toDegrees(angle) );
+      return "";
    }
          
    public static String sin(int angle) {
@@ -125,8 +173,9 @@ public class UnitCircle
       return "";  //points.get(angleLoc).????;  //<--replace ???? and uncomment.
    }      
  
+   // Make this function call the degree version.  
    public static String sin(double angle) {
-      return sin( (int)Math.toDegrees(angle) );
+      return "";
    }
    
    public static String tan(int angle) {
@@ -136,25 +185,108 @@ public class UnitCircle
          return "Not on Unit Circle";
       return "";  //points.get(angleLoc).????;  //<--replace ???? and uncomment.
    }      
-     
+   
+   // Make this function call the degree version.  
    public static String tan(double angle) {
-      return tan( (int)Math.toDegrees(angle) );
-   }
-      
-   // Compare two angles using this formula:
-   //
-   //     |x - y|
-   //  -------------  <= epsilon
-   //  max(|x|, |y|)
-   //
-   // where epsilon is usually set to 1E-14 (i.e. 10^-14)
-   public static boolean approximatelyEqual(double angle1, double angle2) {
-      return false;
+      return "";
    }
 
-   //Helper functions:
+   /* EXPRESSING TRIG FUNCTIONS IN TERMS OF REFERENCE ANGLES */
+
+   //Returns a quadrant 1, 2, 3, or 4 for the given angle.
+   //Returns zero for a quadrantal angle.
+   public static int getQuadrant(int angle) {
+      angle = coterminalIn0to360(angle);
+      if (isQuadrantal(angle))
+         return 0;
+      else if(angle > 0 && angle < 90)
+         return 1;
+      else if(angle > 90 && angle < 180)
+         return 2;
+      else if(angle > 180 && angle < 270)
+         return 3;
+      else if(angle > 270 && angle < 360)
+         return 4;
+      return -1;
+   }
    
-      static String getNamedValueAtAngle(int angle, String value) {
+   public static int getQuadrant(double angle) {
+      angle = coterminalIn0to2PI(angle);
+      if (isQuadrantal(angle))
+         return 0;
+      else if(angle > 0.0 && angle < PI/2)
+         return 1;
+      else if(angle > PI/2 && angle < PI)
+         return 2;
+      else if(angle > PI && angle < 3*PI/2)
+         return 3;
+      else if(angle > 3*PI/2 && angle < 2*PI)
+         return 4;
+      return -1;
+   }
+ 
+   /* Expresses the given trig function in terms of the same
+    * trig function applied to the reference angle for the
+    * given angle, and with the correct sign for the quadrant
+    * of the given angle.
+    *
+    *  Examples in degrees: 
+    *    sin(210) = -sin(30)  b.c. sine is negative in the 3rd quadrant.
+    *    cos(-45) = cos(45)   b.c. cosine is positive in the 4th quadrant.
+    *    tan(495) = -tan(45)  b.c. tangent is negative in the 3rd quadrant.
+    *
+    *  Same examples in radians: 
+    *    sin(7pi/6) = -sin(pi/6)  b.c. sine is negative in the 3rd quadrant.
+    *    cos(-pi/4) = cos(pi/4)   b.c. cosine is positive in the 4th quadrant.
+    *    tan(11pi/4) = -tan(pi/4) b.c. tangent is negative in the 3rd quadrant.
+    */   
+   public static String cosInTermsOfReferenceAngle(int angle) {
+      angle = coterminalIn0to360(angle);
+      int quadrant = getQuadrant(angle);
+      String sign = "";
+      if (cosineSigns[quadrant] == -1)
+         sign = "-";
+      angle = referenceAngle(angle);
+      return sign + "cos(" + angle + ")"; 
+   }
+     
+   public static String cosInTermsOfReferenceAngle(double angle) {
+      angle = coterminalIn0to2PI(angle);
+      int quadrant = getQuadrant(angle);
+      String sign = "";
+      if (cosineSigns[quadrant] == -1)
+         sign = "-";
+      angle = referenceAngle(angle);
+      return sign + "cos(" + getNamedValueAtAngle(angle, "nameOfAngleInRadians") + ")"; 
+   }
+     
+   public static String sinInTermsOfReferenceAngle(int angle) {
+      return ""; 
+   }
+     
+   public static String sinInTermsOfReferenceAngle(double angle) {
+      return ""; 
+   }
+     
+   public static String tanInTermsOfReferenceAngle(int angle) {
+      return ""; 
+   }
+     
+   public static String tanInTermsOfReferenceAngle(double angle) {
+      return ""; 
+   }
+
+
+   /*     HELPER FUNCTIONS     */
+   
+   /* Note that this function has package-level access, which means it  
+    * can be accessed from another class in the same package (folder),  
+    * but nowhere else.
+    *
+    * Also note that this function uses reflection to access the 
+    * requested instance variable of the given UnitCirclePoint object.
+   */ 
+   static String getNamedValueAtAngle(int angle, String value) {
       int angleLoc = anglesInDegrees.indexOf( angle );
       if (angleLoc == -1)
          return "Not on Unit Circle";
