@@ -25,7 +25,7 @@ public class PostFix
 	{
 	}
 
-	public double calc(double one, double two, char op)
+	private double calc(double one, double two, String op)
 	{
 		return 0.0;
 	}
