@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//Copyright A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import static java.lang.System.*;
 
-public class Lab07b
+public class OddsEvensRunner
 {
 	public static void main( String args[] ) throws IOException
 	{

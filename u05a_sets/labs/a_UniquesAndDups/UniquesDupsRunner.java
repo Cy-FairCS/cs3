@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//ï¿½ A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
@@ -7,7 +7,7 @@
 import static java.lang.System.*;
 import java.util.*;
 
-public class Lab07a
+public class UniquesDupsRunner
 {
 	public static void main( String args[] )
 	{
