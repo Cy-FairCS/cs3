@@ -16,7 +16,8 @@ public class ListFunHouse
 	//this method will return the number of nodes present in list
 	public static int nodeCount(ListNode list)
 	{
-		return 0;
+   	int count=0;
+		return count;
 	}
 		
 	//this method will create a new node with the same value as the first node and add this
@@ -29,7 +30,7 @@ public class ListFunHouse
 	//new node at the end.  Once finished, the last node will occur twice.
 	public static void doubleLast(ListNode list)
 	{
-   	ListNode prev=null;
+
 	}
 		
 	//method skipEveryOther will remove every other node
@@ -40,13 +41,13 @@ public class ListFunHouse
 	//this method will set the value of every xth node in the list
 	public static void setEveryXthNode(ListNode list, int x, Comparable value)
 	{
-		int count=1;
+
 	}	
 
 	//this method will remove every xth node in the list
    //Assume x > 1
 	public static void removeEveryXthNode(ListNode list, int x)
 	{
-		int count=1;
+
 	}		
 }

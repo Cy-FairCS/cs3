@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//ï¿½ A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class - 
@@ -7,7 +7,7 @@
 import java.util.*;
 import static java.lang.System.*;
 
-public class Lab15d
+public class HistoList_Runner
 {
 	public static void main(String[] args)
 	{

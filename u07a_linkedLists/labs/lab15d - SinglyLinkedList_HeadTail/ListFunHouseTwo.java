@@ -23,7 +23,6 @@ public class ListFunHouseTwo
 	//this method will return the number of nodes present in list
 	public int nodeCount()
 	{
-   
 	
    	return 0;
 	}
