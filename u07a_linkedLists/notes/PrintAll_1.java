@@ -1,11 +1,11 @@
 //© A+ Computer Science
 // www.apluscompsci.com
 
-//printing a list example two
+//printing a list example
 
 import static java.lang.System.*;
 
-public class PrintTwo
+public class PrintAll_1
 {
    public static void main( String args[] )
    {
@@ -16,10 +16,6 @@ public class PrintTwo
 		while(x!=null)
 		{
 		   out.println(x.getValue());
-		   x=x.getNext();
 		}
-				
-		System.out.println(x);		//why is this null??
-											//do we want x to be null??
    }
 }
