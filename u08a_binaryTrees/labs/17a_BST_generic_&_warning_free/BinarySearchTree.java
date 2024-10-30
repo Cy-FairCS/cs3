@@ -1,4 +1,4 @@
-//Â© A+ Computer Science  -  www.apluscompsci.com
+//© A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class - 
@@ -17,18 +17,25 @@ public class BinarySearchTree<T extends Comparable<T>>
 		root = null;
 	}
 
-	public void makeEmpty(){
-		root = null;
-	}
-
 	public void add(T val)
 	{
-
+		root = add(val, root);
 	}
 
 	private TreeNode<T> add(T val, TreeNode<T> tree)
 	{
-
+	   if(tree == null)
+			tree = new TreeNode<T>(val);
+		
+		T treeValue = tree.getValue();
+		int dirTest = val.compareTo(treeValue);		
+		
+		if(dirTest < 0)
+			tree.setLeft(add(val, tree.getLeft()));
+		else if(dirTest > 0)
+			tree.setRight(add(val, tree.getRight()));
+		
+		return tree;
 	}
 
 	public void inOrder()

@@ -1,4 +1,4 @@
-//Â© A+ Computer Science  -  www.apluscompsci.com
+//© A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class - 
@@ -11,14 +11,12 @@ public class BinarySearchTree
 {
 	private TreeNode root;
 
-	public BinarySearchTree()
-	{
+	public BinarySearchTree() 	{
 		root = null;
 	}
 
-	public void add(Comparable val)
-	{
-		root = add(val, root);
+	public void add(Comparable val) 	{
+
 	}
 
 	private TreeNode add(Comparable val, TreeNode tree)
@@ -26,32 +24,24 @@ public class BinarySearchTree
 
 	}
    
-   public void inOrder()
-	{
+   public void inOrder() 	{
 		inOrder(root);
 		System.out.println("\n\n");
 	}
 
-	private void inOrder(TreeNode tree)
-	{
-		if (tree != null){
-			inOrder(tree.getLeft());
-			System.out.print(tree.getValue() + " ");
-			inOrder(tree.getRight());
-		}
+	private void inOrder(TreeNode tree)	{
+
 	}
 
 	//add preOrder, postOrder, and revOrder
 
 
 
-	public int getNumLevels()
-	{
+	public int getNumLevels() 	{
 		return getNumLevels(root);
 	}
 
-	private int getNumLevels(TreeNode tree)
-	{
+	private int getNumLevels(TreeNode tree) {
 		return 0;
 	}
    
