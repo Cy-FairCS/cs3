@@ -1,10 +1,10 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//ï¿½ A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
 //Lab  -
 
-public class Lab14c
+public class PQ_DelegatorRunner
 {
 	public static void main ( String[] args )
 	{
