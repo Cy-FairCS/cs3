@@ -1,0 +1,36 @@
+|13:48:22.022|activsystem|605|Activsystem::ActivSystem::updateHubs| updateHubs
+|13:48:22.032|activsystem|859|Activsystem::ActivSystem::updateEngage2Hub| Engage2 conflict check on hub: 665003954
+|13:48:22.042|virtualEngage2Hub|245|Activsystem::VirtualEngage2Hub::readUrl| read url: http://localhost:8081
+|13:48:22.043|virtualEngage2Hub|246|Activsystem::VirtualEngage2Hub::readUrl| read hub name: 685T-B38395
+|13:48:22.043|activsystem|126|Activsystem::ActivSystem::getEngage2Hub| Making hub
+|13:48:22.043|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.043|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.043|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.044|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.044|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.044|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.044|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.044|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.044|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.044|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.044|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.044|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.044|enhancedmessagemanager|348|Activsystem::EnhancedMessageManager::reset| Reset ---------------------------------------------------------
+|13:48:22.047|virtualEngage2Hub|179|Activsystem::VirtualEngage2Hub::startConfigMonitoring| Engage2: Monitoring settings in C:/Users/waj10825/AppData/Roaming/Promethean/engage2.ini
+|13:48:22.047|virtualEngage2Hub|80|Activsystem::VirtualEngage2Hub::verifyAndInitialize| verifyAndInitialize
+|13:48:22.047|DocumentEntity|164|Activ::DocumentEntity<class Activ::Engage_hubRecord>::setResponse| DocumentEntity::setResponse(-211249152, onGetServerID, onGetServerIDFailure)
+|13:48:22.047|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.047|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.047|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.048|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.048|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.048|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.048|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.048|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.048|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.048|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.048|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.048|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.048|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:22.049|hub|663|Activsystem::Hub::recordError| <<<ACTIVSYSTEM_ERROR>>> ERROR in Hub: 4
+|13:48:30.210|DocumentEntity|186|Activ::DocumentEntity<class Activ::Engage_hubRecord>::handleFailure| DocumentEntity::handleFailure(-211249152, onGetServerIDFailure)
