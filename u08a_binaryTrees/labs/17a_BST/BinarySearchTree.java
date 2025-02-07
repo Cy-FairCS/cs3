@@ -1,10 +1,11 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//Â© A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class - 
 //Lab  -
 
 //You'll need to supply any missing import statements:
+
 
 
 public class BinarySearchTree
@@ -64,7 +65,7 @@ public class BinarySearchTree
 	
 	//getLargest
 		
-   //getWidth
+   //getDiameter
 
 	//remove
 
@@ -81,32 +82,73 @@ public class BinarySearchTree
 	{
 		return "";
 	}
-
-   public void levelOrder()
-   {
+ 
+   public void levelOrder() {
       levelOrder(root);
-      System.out.println("\n\n");
+      System.out.println("\n");
    }
 
-   private void levelOrder(TreeNode tree)
-   {
+   private void levelOrder(TreeNode tree) {
       if(tree==null)
          return;
-   	  
+        
       Queue<TreeNode> level = new LinkedList<TreeNode>();
       level.add(tree);
-      while(!level.isEmpty())
-      {
+      while(!level.isEmpty()) {
          TreeNode node = level.remove();
          out.print(node.getValue() + " ");
-         if(node.getLeft()!=null)
-         {
+         if(node.getLeft()!=null) {
             level.add(node.getLeft());
          }
-         if(node.getRight()!=null)
-         {
+         if(node.getRight()!=null) {
             level.add(node.getRight());
          }
       }
+   }
+ 
+   public void levelOrderWithNulls() {
+      levelOrderWithNulls(root);
+      System.out.println();
+   }
+
+   private void levelOrderWithNulls(TreeNode tree) {
+      if(tree==null)
+         return;
+     
+      Queue<TreeNode> level = new LinkedList<TreeNode>();
+      level.add(tree);
+      int prevLevelSize = 1;
+      int spot = 0;      
+      while(!level.isEmpty() && !allElementsNull(level)) {
+         TreeNode node = level.remove();
+         out.print( node == null ? "null " : node.getValue() + " ");
+         if(node == null) {
+            level.add(null);
+            level.add(null);
+            continue;
+         }
+         if(node.getLeft()!=null)
+            level.add(node.getLeft());
+         else
+            level.add(null);
+         if(node.getRight()!=null)
+            level.add(node.getRight());
+         else
+            level.add(null);     
+         spot++;
+         if (spot == prevLevelSize) {
+            prevLevelSize *= 2;
+            spot = 0;
+            out.print("| ");
+         }
+      }
+   } 
+   
+   private boolean allElementsNull(Collection<TreeNode> list) {
+      for (Object object : list) {
+         if (object != null)
+            return false;
+      }
+      return true;
    }
 }
