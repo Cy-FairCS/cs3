@@ -76,7 +76,6 @@ public class Graph {
               equals the cost of the items in the list
     *       - Clear the list and then add the current entry if the cost of the current entry 
     *         is less than the cost of items in the list:
-    *  - return null if the list is empty after the loop
     *  - Sort the list first by costs and then alphabetically using a Comparator
     *    You can either implement the compare() method in the SortByCosts class
     *    or in a lambda expression that you write in the call to the sort method.
