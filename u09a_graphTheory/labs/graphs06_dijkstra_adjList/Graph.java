@@ -68,22 +68,19 @@ public class Graph {
    /* This method finds the node with the smallest current cost and returns the name of that node.
     * If multiple nodes have the same distance, the one with the smallest name will be returned.
     * Algorithm:
-    *  - Make a list of map entries. You list type will be Map.Entry<String, Double> because you'll 
-    *    be copying entries from the <code>costs</code> map.
-    *  - Loop thru the <code>costs</code> map's entry set:
-    *       - Skip the current entry if it has already been visited.
-    *       - Add the current entry if the list is empty or if the cost of the current entry
+    *  - Make a list to store the names of the nodes.
+    *  - Loop thru the <code>costs</code> map's set of keys:
+    *       - Skip the current node if it has already been visited.
+    *       - Add the current node if the list is empty or if the cost of the current entry
               equals the cost of the items in the list
     *       - Clear the list and then add the current entry if the cost of the current entry 
     *         is less than the cost of items in the list:
-    *  - Sort the list first by costs and then alphabetically using a Comparator
-    *    You can either implement the compare() method in the SortByCosts class
-    *    or in a lambda expression that you write in the call to the sort method.
-    *  - Return the name of the first node in the list
+    *  - Sort the list alphabetically.
+    *  - Return the first node in the list
     */
    private String getNodeWithMinCost(Map<String, Double> costs, Set<String> visited) {
-      List<Map.Entry<String, Double>> smallestCosts = new ArrayList<>();
-      for(Map.Entry<String, Double> e : costs.entrySet()) {
+      List<String> smallestCosts = new ArrayList<>();
+      for(String node : costs.keySet()) {
          /* Complete!!! */
 
       }
@@ -92,13 +89,20 @@ public class Graph {
       return null;
    } 
    
-   // An inner class to be used in getNodeWithMinCost() above if opting not
-   // to use a lambda expression in the call to Collections.sort().
-   private class SortByCost implements Comparator<Map.Entry<String, Double>> {
-      @Override
-      public int compare(Map.Entry<String, Double> e1, Map.Entry<String, Double> e2) {
-         return 0;
-      }
+   /* This method's purpose is to test the getNodeWithMinCost() method
+    * before we proceed with the rest of Dijkstra's algorithm.
+    */
+   private void testGetNodeWithMinCost(Map<String, Double> costs, Set<String> visited) {
+      costs.put("B", 0.0);
+      costs.put("C", 18.0);
+      costs.put("D", 4.0);
+      costs.put("F", 10.0);
+      // Costs for A and E are still Double.POSITIVE_INFINITY
+      visited.add("B");
+      visited.add("D");
+      String node = getNodeWithMinCost(costs, visited);
+      out.println("Testing getNodeWithMinCost: " + node + " " + costs.get(node));      
+      // The result should be:  Testing getNodeWithMinCost: F 10.0
    }
 
    private void displayCostsAndPreviouses(Map<String, Double> costs, Map<String, String> previouses) {
