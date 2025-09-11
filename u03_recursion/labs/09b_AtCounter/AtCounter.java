@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//Â© A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
@@ -9,12 +9,8 @@ import static java.lang.System.*;
 public class AtCounter
 {
    private char[][] atMat;
-   private int atCount;
 
-
-	public AtCounter()
-	{
-		atCount=0;
+	public AtCounter() {
 		atMat = new char[][]{{'@','-','@','-','-','@','-','@','@','@'},
 									{'@','@','@','-','@','@','-','@','-','@'},
 									{'-','-','-','-','-','-','-','@','@','@'},
@@ -27,8 +23,7 @@ public class AtCounter
 									{'-','@','@','@','@','@','-','@','@','@'}};
 	}
 
-	public void countAts(int r, int c)
-	{
+	public void countAts(int r, int c) {
 
 		//add in recursive code to count up the # of @s connected
 		//start checking at spot [r,c]
@@ -51,8 +46,7 @@ public class AtCounter
 
 	}
 
-	public String toString()
-	{
+	public String toString() {
 		String output="";
 		output+=atCount+" @s connected.";
 		return output;
