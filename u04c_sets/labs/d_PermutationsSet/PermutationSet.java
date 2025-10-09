@@ -5,14 +5,17 @@ public class PermutationSet
 {
    public static Set<String> permutations(String word) {
       // Make a HashSet to store the permutations of <code>word</code>
-      //Handling error scenarios
-      if (word == null || word.length() == 0) {
-         // If <code>word</code> is the empty string, add it to your set before returning the set.
-         return perms;
+      
+      // Throw a NPE
+      if (word == null)
+         ;
+      // If `word` is the empty string, add it to your set before returning the set.
+      if (word.length() == 0) {
+         ;
       }
-      char initial; // store the first character
-      String rem; // Store the rest of the string
-      // Call permuations() on rem and store the set it gives you
+      // Store the first character
+      // Store the rest of the string
+      // Call permutations() on rem and store the set it gives you
       // Loop through each permutation of rem
          // Loop through each spot of the current word from rem 
             // Insert <code>init</code> at the current spot
