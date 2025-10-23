@@ -19,6 +19,11 @@ public class Number implements Comparable<Number>
 		return 0;		
 	}
 	
+   // Return these four items in this order, separated by a SPACE:
+   //  * the original number
+   //  * the base of the original number
+   //  * the base 10 representation
+   //  * the binary representation
 	public String toString( )
 	{
 	  return "";
