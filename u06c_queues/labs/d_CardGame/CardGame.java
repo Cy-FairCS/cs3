@@ -4,9 +4,9 @@ import java.util.Queue;
 import java.util.LinkedList;
 
 /*
-1. If exactly one player’s pile is empty, the other player adds all the cards in the discard pile
+1. If exactly one playerâ€™s pile is empty, the other player adds all the cards in the discard pile
 of his or her pile without changing the order. The round ends.
-2. If both players’ piles are empty at the same time, both players’ piles remain empty. The round ends.
+2. If both playersâ€™ piles are empty at the same time, both playersâ€™ piles remain empty. The round ends.
 3. Each player turns over the top card from his/her pile.
 4. If the cards match in value, both cards are added to the discard pile in either order and play
 5. If the cards do not match in value, the player whose card has the greater value adds any

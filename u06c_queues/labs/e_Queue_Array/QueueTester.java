@@ -1,10 +1,10 @@
 import queue.Queue;
-import queue.LinkedListQueue;
+import queue.ArrayQueue;
 
 public class QueueTester
 {
 	public static void main(String args[]) {
-		Queue<String> queue = new Queue<String>();
+		Queue<String> queue = new Queue<String>(5);
 		System.out.println("Adding 'Red', 'Green', 'Blue', 'Purple', and 'Orange' to the queue.");
 		queue.enqueue("Red");
 		queue.enqueue("Green");
@@ -14,6 +14,9 @@ public class QueueTester
 		
 		System.out.println("\n\nTesting the \"toString()\" method:");
 		System.out.println(queue);
+		
+		System.out.println("\nTesting for a full queue");
+		System.out.println(queue.full());
 		
 		System.out.println("\nTesting for an empty() queue");
 		System.out.println(queue.empty());
@@ -40,6 +43,9 @@ public class QueueTester
 		System.out.println("\nRemoving all items from the queue!");
 		while (!queue.empty())
 			System.out.println(queue.dequeue());
+		
+		System.out.println("\nTesting for a full queue");
+		System.out.println(queue.full());
 		
 		System.out.println("\nTesting for an empty() queue");
 		System.out.println(queue.empty());

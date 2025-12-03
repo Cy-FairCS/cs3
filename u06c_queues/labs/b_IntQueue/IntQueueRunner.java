@@ -1,17 +1,7 @@
-//© A+ Computer Science  -  www.apluscompsci.com
-//Name -
-//Date -
-//Class -
-//Lab  -
-
-//ArrayList of ints
-//or
-//array of ints
-
 import java.util.ArrayList;
 import static java.lang.System.*;
 
-public class Lab14b
+public class IntQueueRunner
 {
 	public static void main ( String[] args )
 	{

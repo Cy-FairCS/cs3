@@ -12,3 +12,4 @@ class FullQueueException extends RuntimeException
         super(s);
     }
 }
+
