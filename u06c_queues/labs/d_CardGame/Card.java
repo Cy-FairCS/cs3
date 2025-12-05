@@ -1,5 +1,3 @@
-package cardgame;
-
 public class Card implements Comparable<Card>
 {
 	private static final String[] suit = {"Clubs", "Diamonds", "Hearts", "Spades"};

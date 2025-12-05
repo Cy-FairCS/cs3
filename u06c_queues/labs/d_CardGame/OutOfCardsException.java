@@ -1,5 +1,3 @@
-package cardgame;
-
 class OutOfCardsException extends RuntimeException
 {
 	OutOfCardsException() {}

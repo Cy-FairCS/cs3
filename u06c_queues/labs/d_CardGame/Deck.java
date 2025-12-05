@@ -1,5 +1,3 @@
-package cardgame;
-
 public class Deck
 {
 	private boolean[] played;
