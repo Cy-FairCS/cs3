@@ -64,7 +64,7 @@ public class SinglyLinkedList_Runner
       try {
          out.println(listName + ".get(-1) should throw an IndexOutOfBoundsException.");
          out.println("\tlist.get(-1) == " + list.get(-1));         
-
+      
       } catch(Exception e) {
          out.println("\tYour method threw:  " + getFullMessage(e));
       } 
@@ -108,11 +108,11 @@ public class SinglyLinkedList_Runner
       out.println("Testing remove(spot) on the last item:");
       out.println("\tremove( list.size()-1 ) returned " + list.remove(list.size()-1));
       out.println("\t" + listName + " after remove(list.size()-1):   "+list.toString() + "\n");
-
+   
       out.println("Testing remove(spot) on a middle item:");
       out.println("\tremove(2) returned " + list.remove(2));
       out.println("\t" + listName + " after remove(2):   "+list.toString() + "\n");
-
+   
       out.println("Testing remove(spot) on a invalid spot:");
       try {
          out.println("\t" + listName + ".remove(100) should throw an IndexOutOfBoundsException.");
@@ -124,25 +124,47 @@ public class SinglyLinkedList_Runner
       Integer firstItem = (Integer)list.get(0);
       out.println("\tremove(Integer.valueOf("+firstItem+")) returned " + list.remove(Integer.valueOf(firstItem)));
       out.println("\t" + listName + " after remove(Integer.valueOf("+firstItem+")):   "+list.toString() + "\n");
-
+   
       out.println("Testing remove(obj) on the last item:");
       Integer lastItem = (Integer)list.get(list.size()-1);
       out.println("\tremove(Integer.valueOf("+lastItem+")) returned " + list.remove(Integer.valueOf(lastItem)));
       out.println("\t" + listName + " after remove(Integer.valueOf("+lastItem+")):   "+list.toString() + "\n");
-
+   
       out.println("Testing remove(obj) on an item that IS in the list:");
       out.println("\tremove(Integer.valueOf("+existingItem+")) returned " + list.remove(Integer.valueOf(existingItem)));
       out.println("\t" + listName + " after remove(Integer.valueOf("+existingItem+")):   "+list.toString() + "\n");
-
+   
       out.println("Testing remove(obj) on an item that is NOT in the list:");
       out.println("\tremove(Integer.valueOf("+nonexistentItem+")) returned " + list.remove(Integer.valueOf(nonexistentItem)));
       out.println("\t" + listName + " after remove(Integer.valueOf("+nonexistentItem+")):   "+list.toString() + "\n");
-
+   
       out.println("Testing removeFirst and removeLast:");
       out.println("\tremoveFirst() returned " + list.removeFirst());
       out.println("\t" + listName + " after removeFirst():   "+list.toString()); 
       out.println("\tremoveLast() returned " + list.removeLast());
       out.println("\t" + listName + " after removeLast():   "+list.toString()); 
+      out.println();
+      
+      out.println("Testing all remove methods on a list with ONE element:");
+      list.clear();
+      list.add(50);
+      out.println("\t" + listName + " after clear() and add(50): " + list);
+      list.remove(0);
+      out.println("\t" + listName + " after remove(0): " + list);
+      list.add(50);
+      out.println("\t" + listName + " after add(50): " + list);   
+      list.remove(Integer.valueOf(50));
+      out.println("\t" + listName + " after remove(Integer.valueOf(50)): " + list);
+      list.add(50);
+      out.println("\t" + listName + " after add(50): " + list);  
+      list.removeFirst();
+      out.println("\t" + listName + " after removeFirst(): " + list);
+      list.add(50);
+      out.println("\t" + listName + " after add(50): " + list);  
+      list.removeLast();
+      out.println("\t" + listName + " after removeLast(): " + list);
+      list.add(50);
+      out.println("\t" + listName + " after add(50): " + list);
       out.println();
    }
 
@@ -185,7 +207,7 @@ public class SinglyLinkedList_Runner
       out.println("*** Test List Utility methods ***");
       out.println("*********************************");
       out.println("\t     SUM:: "+ListUtilities.getSum(list));
-      out.println("\t AVERAGE:: "+ListUtilities.getAvg(list));
+      out.println("\t AVERAGE:: "+ListUtilities.getAverage(list));
       out.println("\tSMALLEST:: " + ListUtilities.getSmallest(list));
       out.println("\t LARGEST:: "+ListUtilities.getLargest(list));
       out.println();     
