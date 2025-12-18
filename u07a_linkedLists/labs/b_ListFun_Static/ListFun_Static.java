@@ -6,12 +6,12 @@
 
 import static java.lang.System.*;
 
-public class StaticListFunHouse {
+public class ListFun_Static {
    /* Adding this private constructor means a default public constructor
     * won't exist and users of this class will have to call the methods
     * using the class name since they aren't able to construct objects.
     */
-   private StaticListFunHouse() {   }
+   private ListFun_Static() {   }
    
    //this method will print the entire list on the screen
    public static void print(ListNode list) {
