@@ -1,7 +1,7 @@
 import java.util.*;
 import static java.lang.System.*;
 
-public class ListFun_Static_Runner
+public class LLFun_Static_Runner
 {
    public static void main ( String[] args )
    {

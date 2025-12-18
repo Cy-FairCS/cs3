@@ -6,11 +6,11 @@
 import java.util.*;
 import static java.lang.System.*;
 
-public class ListInstanceVarFunHouse_Runner
+public class LLFun_InstanceVar_Runner
 {
 	public static void main (String[] args)
 	{
-		ListInstanceVarFunHouse funHouse = new ListInstanceVarFunHouse(); 
+		LLFun_InstanceVar funHouse = new LLFun_InstanceVar(); 
 		
 		funHouse.add("go");
 		funHouse.add("on");

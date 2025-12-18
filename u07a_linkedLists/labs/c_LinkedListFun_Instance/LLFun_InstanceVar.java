@@ -6,11 +6,11 @@
 
 import static java.lang.System.*;
 
-public class ListInstanceVarFunHouse
+public class LLFun_InstanceVar
 {
 	private ListNode theList;
 	
-	public ListInstanceVarFunHouse()	{
+	public LLFun_InstanceVar()	{
 
 	}
 	
