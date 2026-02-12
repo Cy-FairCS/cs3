@@ -10,7 +10,7 @@ public class BST_Runner
 {
    static BinarySearchTree tree;
    
-   public static void main( String args[] )
+   public static void main( String args[] ) throws NotANumberException
    {
       tree = new BinarySearchTree();
    
@@ -62,6 +62,8 @@ public class BST_Runner
       tree.add(64); out.println("tree.add(64)");
       tree.add(57); out.println("tree.add(57)");
       tree.add(91); out.println("tree.add(91)");
+      tree.add(93); out.println("tree.add(93)");
+      tree.add(92); out.println("tree.add(92)");
       out.println();      
       out.println("*** Expected tree structure after these additions ***");
       out.println();
@@ -73,15 +75,37 @@ public class BST_Runner
       out.println("<>  <>  57  <>  <>  <>  <>  <>    <>  <>  <>  <>  <>  <>  <>  <>    <>  <>  92  <>  <>  <>  <>  <>    <>  <>  <>  <>  <>  <>  <>  <>  ");
       out.println();      
       testTree();
-   
-      //Uncomment when ready to test 
-      //testRemove();  
+      /*
+      tree.add(94); out.println("tree.add(94)");
+      tree.add(95); out.println("tree.add(95)");
+      tree.add(96); out.println("tree.add(96)");
+      tree.add(97); out.println("tree.add(97)");      
+      tree.add(121);
+      tree.add(122);
+      tree.add(123);
+      tree.add(124);
+      tree.add(125);
+      tree.add(126);
+      tree.add(127);
+      tree.add(90);
+      tree.add(100);
+      tree.add(77);
+      tree.add(23);
+      tree.add(11);
+      tree.add(28);
+      tree.add(48);
+      */
+      
+      testRemoveMethod();  
+      
+      tree.clear();
+      IO.println("Tree after calling clear: ");
+      testTree();
    }
    
-   private static void testTree() {  
-      out.println("Level order traversal with nulls in place of missing nodes: ");
+   private static void testTree() {
       tree.levelOrderWithNulls();
-      out.println();
+   
       out.println("IN ORDER from toString: " + tree.toString());
       out.print("              IN ORDER: ");
       tree.inOrder();
@@ -92,27 +116,33 @@ public class BST_Runner
       out.print("         REVERSE ORDER: ");
       tree.revOrder();
       out.println();
-//       out.println(tree.isFull()?"The tree is full.":"The tree is not full.");
-//       out.println(tree.isPerfect()?"The tree is perfect.":"The tree is not perfect.");
-//       out.println(tree.search(100)?"The tree contains 100!":"The does not contain 100!"); 
-//       out.println(tree.search(114)?"The tree contains 114!":"The does not contain 114!");
-//       
-//       out.println("\nNumber of nodes is " + tree.getNumNodes());
-//       out.println("Number of leaves is " + tree.getNumLeaves());
-//       out.println("Number of levels is " + tree.getNumLevels());
-//       out.println("Tree height is " + tree.getHeight());
-//       out.println("The smallest tree node " + tree.getSmallest());   
-//       out.println("The largest tree node " + tree.getLargest());
-//       out.println("Tree diameter is " + tree.getDiameter());
-//       out.println("Sum of all nodes: " + tree.getTotal()); 
+      out.println(tree.isFull()?"The tree is full.":"The tree is not full.");
+      out.println(tree.isPerfect()?"The tree is perfect.":"The tree is not perfect.");
+      out.println(tree.search(100)?"The tree contains 100!":"The does not contain 100."); 
+      out.println(tree.search(114)?"The tree contains 114!":"The does not contain 114.");
+      
+      out.println("\nNumber of nodes is " + tree.getNumNodes());
+      out.println("Number of leaves is " + tree.getNumLeaves());
+      out.println("Number of levels is " + tree.getNumLevels());
+      out.println("Tree height is " + tree.getHeight());
+      try {
+         out.println("The smallest tree node " + tree.getSmallest());   
+         out.println("The largest tree node " + tree.getLargest());
+      } catch (Exception e) {
+         out.println(e.getMessage());
+      }
+      out.println("Tree diameter is " + tree.getDiameter());
+      out.println("Sum of all nodes: " + tree.getTotal()); 
+      //out.println("The max width: " + tree.getMaxWidth());
       out.println();
-      pause();
+      //pause();
    }
    
    private static void testRemoveMethod() {
       out.println("Level order before removing any nodes - using level order traversal.");
       tree.levelOrderWithNulls();
       
+      //Uncomment when ready to test 
       tree.remove(90);
       out.println("Tree after removing 90.");
       tree.levelOrderWithNulls();
@@ -139,9 +169,9 @@ public class BST_Runner
    
       tree.remove(100);                
       out.println("Tree after removing 100.");
-      tree.levelOrderWithNulls(); 
-   }
-      
+      tree.levelOrderWithNulls();       
+   }   
+   
    public static void pause(int delay) {
       try
       {

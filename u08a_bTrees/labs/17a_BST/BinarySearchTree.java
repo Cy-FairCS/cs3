@@ -355,16 +355,18 @@ class BinarySearchTree
          if(node == null) {
             level.add(null);
             level.add(null);
-            continue;
          }
-         if(node.getLeft()!=null)
+         else if(node.getLeft()!=null && node.getRight()==null) {
             level.add(node.getLeft());
-         else
             level.add(null);
-         if(node.getRight()!=null)
+         }
+         else if(node.getLeft()==null && node.getRight()!=null) {
+            level.add(null);  
             level.add(node.getRight());
-         else
-            level.add(null);     
+         } else {
+            level.add(node.getLeft());
+            level.add(node.getRight());
+         }
          spot++;
          if (spot == prevLevelSize) {
             prevLevelSize *= 2;
