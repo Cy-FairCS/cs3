@@ -1,4 +1,4 @@
-//© College Board
+//Â© College Board
 //AP Computer Science AB
 //ListNode
 
@@ -33,3 +33,4 @@ public class ListNode
 		next = theNewNext; 
 	}
 }
+
