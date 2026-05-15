@@ -33,7 +33,7 @@ public class QuickSortList {
          // scan right: find elements greater than pivot 
          while (i < j && list.get(i).compareTo(pivot) <= 0) { i += 1; }
          // scan left: find elements smaller than pivot
-         while (i <= j && list.get(j).compareTo(pivot) >= 0) { j -= 1; }
+         while (i <= j && list.get(j).compareTo(pivot) > 0) { j -= 1; }
          if (i < j) {
             swap(list, i, j);  // swap around pivot
          }

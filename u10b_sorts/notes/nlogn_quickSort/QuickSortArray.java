@@ -12,45 +12,41 @@ public class QuickSortArray {
    }
 
 
-   public static void sort1a(int array[], int start, int end)
+   public static void sort(int array[], int start, int end)
    {
-      int bot = start;                          // index of left-to-right scan
-      int top = end;                            // index of right-to-left scan
+      int left = start;                          // index of left-to-right scan
+      int right = end;                            // index of right-to-left scan
    
-      if (end - start >= 1)                     // check that there are at least two elements to sort
-      {                                         // could’ve been written as if (end > start)
-         int pivot = array[bot];              // set the pivot as the first element in the partition
-      
-         while (bot < top) {                    // while the scan indices from left and right have not met,
-            while (bot < top && array[bot] <= pivot)  // from the left, look for the first
-               bot++;                                  // element greater than the pivot
-            while (bot <= top && array[top] >= pivot) // from the right, look for the first
-               top--;                                  // element not greater than the pivot
-            if (bot < top)                             // if the left seek index is still smaller than
-               swap(array, bot, top);                  // the right index, swap the corresponding elements
+      if (end > start) {                    // check that there are at least two elements to sort
+         int pivot = array[left];              // set the pivot as the first element in the partition
+         while (left < right) {                    // while the scan indices from left and right have not met,
+            while (left < right && array[left] <= pivot)  // from the left, look for the first
+               left++;                                  // element greater than the pivot
+            while (left <= right && array[right] > pivot) // from the right, look for the first
+               right--;                                  // element not greater than the pivot
+            if (left < right)                             // if the left seek index is still smaller than
+               swap(array, left, right);                  // the right index, swap the corresponding elements
          }
-         swap(array, start, top);          // after the indices have crossed, swap the last element in
+         swap(array, start, right);          // after the indices have crossed, swap the last element in
                                         // the left partition with the pivot 
          System.out.println("pivot = " + pivot + "\t" + Arrays.toString(array)); 
          count[0]++;                                       
-         sort(array, start, top - 1); // quicksort the left partition
-         sort(array, top + 1, end);   // quicksort the right partition
+         sort(array, start, right - 1); // quicksort the left partition
+         sort(array, right + 1, end);   // quicksort the right partition
       }
    }
    
-   public static void sort1b(int array[], int low, int high)
-   {
+   public static void sort2(int array[], int low, int high) {
       int i = low;                          // index of left-to-right scan
       int j = high;                            // index of right-to-left scan
    
-      if (low < high)                     // check that there are at least two elements to sort
-      {                                         // could’ve been written as if (end > start)
+      if (low < high) {                    // check that there are at least two elements to sort
          int pivot = array[low];              // set the pivot as the first element in the partition
       
          while (i < j) {                    // while the scan indices from left and right have not met,
             while (i < j && array[i] <= pivot)  // from the left, look for the first
                i++;                                  // element greater than the pivot
-            while (i <= j && array[j] >= pivot) // from the right, look for the first
+            while (i <= j && array[j] > pivot) // from the right, look for the first
                j--;                                  // element not greater than the pivot
             if (i < j)                             // if the left seek index is still smaller than
                swap(array, i, j);                  // the right index, swap the corresponding elements
@@ -69,7 +65,7 @@ public class QuickSortArray {
      * Quick sort the given array starting from index {@code low} to {@code high} 
      * Uses the first element in the array as the pivot 
      */
-   private static void sort(int[] array, int low, int high) {
+   private static void sort3(int[] array, int low, int high) {
       if (low < high) {
          //System.out.print("pivot = " + array[low] + "\t");
          int p = partition(array, low, high);
@@ -90,7 +86,7 @@ public class QuickSortArray {
          // scan right: find elements greater than pivot 
          while (i < j && array[i] <= pivot) {  i += 1;  }                                 // out.print("i=" + i + " ");
          // scan left: find elements smaller than pivot
-         while (i <= j && array[j] >= pivot) {  j -= 1;  }                               // out.print("j=" + j + " ");
+         while (i <= j && array[j] > pivot) {  j -= 1;  }                               // out.print("j=" + j + " ");
          if (i < j) {
             swap(array, i, j);  // swap around pivot
          }
@@ -100,7 +96,7 @@ public class QuickSortArray {
       return j; // return location of pivot
    }
    
-   private static int partition2(int[] array, int low, int high) {
+   private static int partitionFAIL(int[] array, int low, int high) {
       int pivot = array[low]; // select pivot element (left-most)
       int i = low;
       int j = high;
