@@ -11,35 +11,32 @@ class QuickSort
 {
 	private static int passCount;
 
-	private QuickSort()
-	{
-	}
+	private QuickSort() { }
 
-	public static void quickQuickSort(Comparable[] list )
-	{
+	public static void quickQuickSort(int[] list ) {
 		passCount=0;
 	   quickQuickSort(list, 0, list.length-1);
 	}
 
-	private static void quickQuickSort(Comparable[] list, int low, int high)
-	{
-
-
-
+	private static void quickQuickSort(int[] list, int start, int end) {
 
 	}
 
-	private static int partition(Comparable[] list, int low, int high)
-	{
+	private static int partition(int[] list, int start, int end) {
 
+		return 0;
+	}
+   
+	public static void quickQuickSort(Comparable[] list ) {
+		passCount=0;
+	   quickQuickSort(list, 0, list.length-1);
+	}
 
+	private static void quickQuickSort(Comparable[] list, int start, int end) {
 
+	}
 
-
-
-
-
-
+	private static int partition(Comparable[] list, int start, int end) {
 
 		return 0;
 	}
